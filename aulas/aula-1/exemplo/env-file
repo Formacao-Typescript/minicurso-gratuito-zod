@@ -1,0 +1,3 @@
+NODE_ENV=dev
+JWT_SECRET=secret
+JWT_AUDIENCE=audience
