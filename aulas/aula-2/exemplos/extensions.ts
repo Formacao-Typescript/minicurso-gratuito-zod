@@ -45,3 +45,7 @@ type UserSemCode = z.infer<typeof userSemCode>
 const userUpdateSchema = userSchema.omit({ id: true }).partial() // aqui os objetos internos não são parciais
 type UserUpdate = z.infer<typeof userUpdateSchema>
 
+const updatepayload: UserUpdate = {
+
+}
+
