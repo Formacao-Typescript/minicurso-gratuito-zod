@@ -90,7 +90,7 @@ function convert<T extends ZodSchema>(payload: T) {
     return (obj: string, ctx: RefinementCtx) => {
         try {
             const validated = payload.safeParse(JSON.parse(obj))
-            if (validated.success) return validated.data as T
+            if (validated.success) return validated.data as T['_output']
 
 
             for (const issue of validated.error.issues) {
@@ -128,3 +128,16 @@ const discriminatedPayload = z.discriminatedUnion('from', [
     })),
 ])
 type PayloadComplexo = z.infer<typeof discriminatedPayload>
+
+// Agora se a gente fizer um objeto manual e colocar o tipo correto
+// assumindo que já temos o objeto validado
+const x: PayloadComplexo = {
+    from: 'user', // TODO: Tente mudar para ops ou admin
+    timestamp: Date.now(),
+    payload: {
+        nome: 'string',
+        id: 'string',
+        valor: 123,
+        ativo: true
+    }
+}
