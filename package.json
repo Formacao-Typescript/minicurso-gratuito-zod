@@ -1,0 +1,37 @@
+{
+    "name": "minicurso-gratuito-zod-projeto-base",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "type": "module",
+    "scripts": {
+        "start": "npm run build && node --env-file=.env dist/index.js",
+        "build": "tsc",
+        "dev": "node --import=tsx --env-file=.env ./src/index.ts"
+    },
+    "keywords": [
+        "typescript",
+        "zod",
+        "schema-driven-development",
+        "minicurso",
+        "gratuito",
+        "lsantosdev",
+        "lsantos.dev",
+        "formação TS",
+        "formacaots.com.br"
+    ],
+    "author": "Lucas Santos <hello@lsantos.dev> (https://lsantos.dev/)",
+    "license": "GPL-3.0",
+    "description": "Projeto de exemplo para o minicurso gratuito de Zod e Schema Driven Development",
+    "packageManager": "npm@10.8.2+sha512.c7f0088c520a46596b85c6f8f1da943400199748a0f7ea8cb8df75469668dc26f6fb3ba26df87e2884a5ebe91557292d0f3db7d0929cdb4f14910c3032ac81fb",
+    "devDependencies": {
+        "@types/express": "^4.17.21",
+        "@types/node": "^22.3.0",
+        "tsx": "^4.17.0",
+        "typescript": "^5.5.4"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "sqlite3": "^5.1.7",
+        "zod": "^3.23.8"
+    }
+}
