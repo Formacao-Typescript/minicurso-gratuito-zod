@@ -2,7 +2,7 @@
 //dependendo de uma chave específica?
 //podemos usar discriminated unions
 
-import { RefinementCtx, z, ZodSchema, ZodString, ZodStringDef, ZodType } from "zod"
+import { RefinementCtx, z, ZodSchema } from "zod"
 
 // vamos pegar o exemplo da outra aula
 // com um JSON interno
