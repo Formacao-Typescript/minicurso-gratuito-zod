@@ -1,6 +1,7 @@
+import { randomUUID } from "crypto";
 import { z } from "zod";
 import { AuthorSchema } from "./Author.js";
-import { randomUUID } from "crypto";
+import type { Serializable } from "./types.js";
 
 export const BookSchema = z.object({
     id: z.string().uuid(),
@@ -19,8 +20,10 @@ export type BookCreationData = z.infer<typeof BookCreationSchema>;
 export const BookUpdateSchema = BookSchema.partial().omit({ id: true });
 export type BookUpdateData = z.infer<typeof BookUpdateSchema>;
 
-export class Book {
-    data: z.infer<typeof BookSchema> | Record<string, never> = {}
+export class Book implements Serializable<Book['data']> {
+    static collectionName = 'books';
+
+    data: z.infer<typeof BookSchema>
     constructor(props: BookCreationData) {
         const validated = BookCreationSchema.parse(props);
         this.data = { ...validated, id: validated.id ?? randomUUID() };

@@ -1,5 +1,5 @@
 export class HTTPError extends Error {
-    constructor(public status: number, message: string) {
+    constructor(message: string, public status: number = 500) {
         super(message)
         this.name = HTTPError.name
     }
