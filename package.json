@@ -6,7 +6,7 @@
     "scripts": {
         "start": "npm run build && node --env-file=.env dist/index.js",
         "build": "tsc",
-        "dev": "node --import=tsx --env-file=.env ./src/index.ts"
+        "dev": "node --import=tsx --env-file=.env --watch ./src/index.ts"
     },
     "keywords": [
         "typescript",
@@ -31,7 +31,6 @@
     },
     "dependencies": {
         "express": "^4.19.2",
-        "sqlite3": "^5.1.7",
         "zod": "^3.23.8"
     }
 }
