@@ -1,11 +1,9 @@
 # Projeto final
 
-<!--toc:start-->
 - [Projeto final](#projeto-final)
 - [Descrição](#descrição)
 - [Arquitetura proposta](#arquitetura-proposta)
-  - [Executando o projeto](#executando-o-projeto) 
-<!--toc:end-->
+- [Executando o projeto](#executando-o-projeto)
 
 > Esse é o repositório do projeto finalizado a partir da aula 5 do minicurso
 > gratuito de Zod da [Formação TS](https://formacaots.com.br).
@@ -34,8 +32,8 @@ ele é utilizado para validar os dados de autor.
 
 A arquitetura proposta nesse projeto é um exemplo do que pode ser feito, mas de
 forma alguma é a única forma de se trabalhar com Zod. A ideia é que a gente
-possa ter um modelo de desenvolvimento que seja baseado em schemas, onde a gente
-possa utilizar os schemas como fonte de informação.
+possa ter um modelo de desenvolvimento que seja baseado em schemas, onde a
+gente possa utilizar os schemas como fonte de informação.
 
 Para isso usei um misto da arquitetura MVC com algumas ideias emprestadas do
 DDD, estamos separando o projeto em:
@@ -45,9 +43,9 @@ por salvar e buscar os dados, nesse caso estamos salvando em memória usando uma
 implementação de um banco de dados abstrato que é estendido pelas classes
 concretas. Dessa forma podemos sempre utilizar a mesma base para poder criar
 todos os repositórios.
-- **Domain**: Objetos de domínio que vão ser utilizados ao longo da aplicação, a
-ideia aqui é termos todos os objetos que são utilizados como entidades ao redor
-do sistema e seus respectivos erros diretamente posicionados aqui.
+- **Domain**: Objetos de domínio que vão ser utilizados ao longo da aplicação,
+a ideia aqui é termos todos os objetos que são utilizados como entidades ao
+redor do sistema e seus respectivos erros diretamente posicionados aqui.
 - **Services**: É a camada de cola entre nosso usuário, a camada de domínio e a
 camada de dados. Vai repassar os dados enviados pelo usuário para as camadas
 mais internas da aplicação e retornar o resultado tratando os erros que
@@ -63,6 +61,6 @@ todos os dados sejam processados.
 
 Faça o clone desse repositório, rode `npm install` na pasta raiz e depois `npm
 run dev` para executar o projeto. Por padrão o projeto vai rodar na porta 3000.
-Se você quiser trocar a porta, basta criar um arquivo `.env` na raiz com o valor
-`PORT=xxxx`, veja o [arquivo de configuração](./src/config.ts) para saber quais
-as variáveis disponíveis.
+Se você quiser trocar a porta, basta criar um arquivo `.env` na raiz com o
+valor `PORT=xxxx`, veja o [arquivo de configuração](./src/config.ts) para saber
+quais as variáveis disponíveis.
